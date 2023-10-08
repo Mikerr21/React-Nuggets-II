@@ -7,7 +7,9 @@ const data =[
 function getSortValue=(element)=>{
   return element.cost;
 }
-
+const sortOrder='asc';
+const reversedOrder=sortOrder==='asc'? 1:-1;
+   
 data.sort((a,b)=>{
   const valueA=getSortValue(a);
   const valueB=getSortValue(b);
@@ -21,4 +23,4 @@ data.sort((a,b)=>{
   
 })
 
-// If we want to do sorting in descending order just multiply valueA-valueB to -1.
+// If we want to do sorting in descending order just multiply valueA-valueB to -1. or check line 11 for a better idea.
