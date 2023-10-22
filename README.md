@@ -16,6 +16,8 @@ Brute force custom hook creation:
 3.In your component, call the function that you created: const {count, handleClick}= useSomething(aParameter)
 
 
+# DATA PERSISTENCE WITH API REQUESTS:   
+POST Request: After assigning to "response" variable the post request like the following : const response =async (title)=>{ await axios.post('http://localhost:3005',{title:title}) {*We can stock our title variable inside a useState hook [book,setBooks] *}  const updatedBooks=[...books,response.data] ; setBooks(updatedbooks); -> after creating a new variable called updatedBooks we stack that inside setBooks() useState hook.
 
-
-
+FETCH Request: After creating the request inside an async variable, don't call it directly ! use it inside a useEffect hook so that it doesn't get re-run thousands of times! only depending on the second argument!
+useEffect(()=>{fetchRequest();},[])    -> useEffect runs each time if 2nd argument changes over time        
