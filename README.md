@@ -21,3 +21,6 @@ POST Request: After assigning to "response" variable the post request like the f
 
 FETCH Request: After creating the request inside an async variable, don't call it directly ! use it inside a useEffect hook so that it doesn't get re-run thousands of times! only depending on the second argument!
 useEffect(()=>{fetchRequest();},[])    -> useEffect runs each time if 2nd argument changes over time        
+
+# LET'S NOT FORGET ABOUT THE FAMOUS useEffect() HOOK:
+A typical react developer will just put a function that updates itselfs depending on a variable  inside square brackets but the problem is that useEffect will keep running multiple times on that variable which won't be updated because inside the useEffect there will be multipl re-runders if the funtion uses useState() to update that variable, so to avoid that better go with the useCallBack() hook inside the useEffect which useEffect only re-runs if the useCallBack() function returns an original value. 
