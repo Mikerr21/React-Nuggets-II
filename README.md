@@ -24,3 +24,6 @@ useEffect(()=>{fetchRequest();},[])    -> useEffect runs each time if 2nd argume
 
 # LET'S NOT FORGET ABOUT THE FAMOUS useEffect() HOOK:
 A typical react developer will just put a function that updates itselfs depending on a variable  inside square brackets but the problem is that useEffect will keep running multiple times on that variable which won't be updated because inside the useEffect there will be multipl re-runders if the funtion uses useState() to update that variable, so to avoid that better go with the useCallBack() hook inside the useEffect which useEffect only re-runs if the useCallBack() function returns an original value. 
+Also put in mind what you are only allowed to return inside the useEffect() Hook:   
+You're not allowed to return a number/string/ or make the first parameter which is a function in async mode.    
+You can only return a function inside the first parameter function.
